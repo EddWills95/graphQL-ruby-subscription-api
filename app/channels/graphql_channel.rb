@@ -23,7 +23,7 @@ class GraphqlChannel < ActionCable::Channel::Base
     })
 
     payload = {
-      result: result.to_h,
+      result: result.to_h, 
       more: result.subscription?,
     }
 
