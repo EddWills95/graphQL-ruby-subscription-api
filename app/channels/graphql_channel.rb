@@ -39,7 +39,7 @@ class GraphqlChannel < ActionCable::Channel::Base
 
   def unsubscribed
     @subscription_ids.each { |sid|
-      GraphQLSchema.subscriptions.delete_subscription(sid)
+      ScProtoApiSchema.subscriptions.delete_subscription(sid)
     }
   end
 end
