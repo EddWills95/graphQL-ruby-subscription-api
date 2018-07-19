@@ -37,12 +37,6 @@ class GraphqlChannel < ActionCable::Channel::Base
     end
   end
 
-  class GraphQLSchema < GraphQL::Schema
-    query(QueryType)
-    subscription(SubscriptionType)
-    use GraphQL::Subscriptions::ActionCableSubscriptions,
-      serializer: CustomSerializer
-  end
 
   def subscribed
     @subscription_ids = []
