@@ -1,5 +1,7 @@
 {
   "name": "sc_proto_api",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "graphql-ruby-client": "^1.4.0"
+  }
 }

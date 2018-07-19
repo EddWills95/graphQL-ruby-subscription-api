@@ -15,7 +15,7 @@ class GraphqlChannel < ActionCable::Channel::Base
       channel: self,
     }
 
-    result = GraphQLSchema.execute({
+    result = ScProtoApiSchema.execute({
       query: query,
       context: context,
       variables: variables,
@@ -31,7 +31,6 @@ class GraphqlChannel < ActionCable::Channel::Base
     # on unsubscribe.
     if result.context[:subscription_id]
       @subscription_ids << result.context[:subscription_id]
-      binding.pry
     end
 
     transmit(payload)
