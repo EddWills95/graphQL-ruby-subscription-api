@@ -5,7 +5,6 @@ class Types::SubscriptionType < Types::BaseObject
   end
 
   def counter_incremented(args)
-    binding.pry 
+    counter = Counter.find(args[:id])
   end
-
 end
