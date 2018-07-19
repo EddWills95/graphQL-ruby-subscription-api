@@ -1,8 +1,11 @@
 class Types::MutationType < Types::BaseObject
-  # TODO: remove me
-  field :test_field, String, null: false,
-    description: "An example field added by the generator"
-  def test_field
-    "Hello World"
+  field :increment_counter, Types::CounterType, null: false do
+    argument :id, ID, required: true
+  end
+
+  def increment_counter(args)
+    counter = Counter.find(args[:id])
+    counter.increment
+    counter
   end
 end
